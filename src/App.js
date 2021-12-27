@@ -39,8 +39,12 @@ function App() {
         
         const legendId = monitorsData[monitorTypeId.toString()].LegendId;
         setSelectedLegend(legendsData[legendId.toString()]);
-        setSelectedMonitor(monitorsData[monitorTypeId.toString()]);
         
+        // loop find monitor
+        for (var i = 0; i < monitorsData[monitorTypeId.toString()].monitors.length; i++) {
+            if(monitorsData[monitorTypeId.toString()].monitors[i].Id === monitorId)
+            setSelectedMonitor(monitorsData[monitorTypeId.toString()].monitors[i]);
+        }
         
     }
 
