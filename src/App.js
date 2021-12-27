@@ -2,6 +2,7 @@ import './App.css';
 import MonitorType from './component/MonitorType'
 import Legend from './component/Legend'
 import React, { useState } from "react";
+//import Monitor from './component/Monitor';
 
 var data = require('./data/Legends.json');
 const themeColors = ['Primary', 'Secondary', 'Success', 'Info', 'Warning', 'Danger'];
@@ -35,9 +36,12 @@ function App() {
     const [selectedMonitor, setSelectedMonitor] = useState({});
 
     function onChange(monitorId, monitorTypeId) {
+        
         const legendId = monitorsData[monitorTypeId.toString()].LegendId;
         setSelectedLegend(legendsData[legendId.toString()]);
-        setSelectedMonitor({});
+        setSelectedMonitor(monitorsData[monitorTypeId.toString()]);
+        
+        
     }
 
     return (
@@ -56,7 +60,7 @@ function App() {
                 })}
             </div>
             {selectedMonitor.Name && (<div>Monitor: {selectedMonitor.Name}</div>)}
-            {selectedMonitor.Desc && (<div>Description: {selectedMonitor.Desc}</div>)}
+            
             <Legend key={selectedLegend.Id} tags={selectedLegend.tags}/>
         </div>
     );

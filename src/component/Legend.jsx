@@ -6,7 +6,7 @@ export default function Legend({tags}) {
             {tags.map((t, index) => {
                 const colort = t.Color
                 return (
-                     <div key={index}  style={{color:colort}}> {t.Label}</div>)
+                     <div key={index} style={{color:colort}}> {t.Label}</div>)
             })}
         </div>
     );
