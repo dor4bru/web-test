@@ -4,7 +4,6 @@ import Monitor from './Monitor'
 
 export default function MonitorType({id, name, variant, legendId, description, monitors, onClick}) {
 
-    console.log("id: " + id + ", var: "+ variant);
     return (
         <DropdownButton
             style={{ marginLeft: '.2rem', marginRight: '.2rem', "customColor": 'black'}}
@@ -15,7 +14,6 @@ export default function MonitorType({id, name, variant, legendId, description, m
             variant={variant.toLowerCase()}
         >
             {monitors.map((m, index) => {
-                console.log('monitor: ' + JSON.stringify(m));
                 return (
                     <Monitor id={m.Id}
                              key={index}
